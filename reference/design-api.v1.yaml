@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Demo-design-api
+  version: '1.0'
+  description: oro-demo-api
+  contact:
+    email: annguyen.dev0594@gmail.com
+  license:
+    name: MIT
+servers:
+  - url: 'http://localhost:3001'
+    description: LOCAL_DEV
+paths:
+  /users:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      operationId: get-users
+      description: get users witl filters
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: user_name
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        '':
+          $ref: '#/components/schemas/Post'
+      required:
+        - id
+    Post:
+      title: Post
+      type: object
+      properties:
+        id:
+          type: string
+          format: uri
+        title:
+          type: string
+        author:
+          type: string
+      required:
+        - id
+  securitySchemes: {}

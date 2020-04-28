@@ -1,0 +1,14 @@
+{
+  "name": "oromico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate:client": "yarn oazapfts reference/design-api.v1.yaml __generated__/client.types.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "oazapfts": "^2.2.4"
+  }
+}
