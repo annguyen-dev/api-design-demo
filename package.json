@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate:client": "yarn oazapfts reference/design-api.v1.yaml __generated__/client.types.ts"
+    "build:ts": "npx dtsgen reference/demo-api.v1.yaml --out dist/client.d.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "oazapfts": "^2.2.4"
+    "dtsgenerator": "^2.5.1"
   }
 }

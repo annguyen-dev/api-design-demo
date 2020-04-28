@@ -21,14 +21,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+              examples:
+                example-1: {}
       operationId: get-users
-      description: get users witl filters
+      description: ''
       parameters:
         - schema:
             type: string
           in: query
-          name: user_name
+          name: userName
 components:
   schemas:
     User:
@@ -40,8 +44,10 @@ components:
           format: uuid
         name:
           type: string
-        '':
-          $ref: '#/components/schemas/Post'
+        posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
       required:
         - id
     Post:
